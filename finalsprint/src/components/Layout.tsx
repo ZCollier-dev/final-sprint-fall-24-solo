@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import Button from "./Button";
+import "../styles/Layout.css";
 
 function Layout() {
   return (
@@ -20,8 +21,8 @@ function Layout() {
             <Button name="Contact"></Button>
           </Link>
         </nav>
-        <Outlet />
       </header>
+      <Outlet />
     </>
   );
 }
