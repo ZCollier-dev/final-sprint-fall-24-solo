@@ -4,7 +4,10 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  box-shadow: 4px 4px 4px black;
+  box-shadow: 4px 4px 4px 4px black;
+  text-shadow: 4px 4px 4px black;
+  position: sticky;
+  top: 0;
 }
 h1 {
   line-height: 4rem;

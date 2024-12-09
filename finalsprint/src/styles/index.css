@@ -7,3 +7,51 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-image: linear-gradient(to bottom right, #48b8ff, #1f1f1f);
 }
+
+main {
+  margin-top: 10%;
+  margin-left: 15%;
+  color: white;
+  text-shadow: 4px 4px 4px black;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.toparticle {
+  max-width: 750px;
+}
+
+.socialsbar {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 256px;
+}
+
+.socialsbar img {
+  width: 64px;
+}
+
+.linkedin {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.treeimg {
+  width: 70%;
+  height: 70%;
+  position: fixed;
+  right: -25%;
+  top: 20%;
+  opacity: 20%;
+  z-index: -1;
+}
+
+.programminglanggrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
