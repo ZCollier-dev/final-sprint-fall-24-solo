@@ -11,9 +11,6 @@ function Layout() {
           <Link to="/">
             <Button name="Home"></Button>
           </Link>
-          <Link to="/hangman">
-            <Button name="Hangman"></Button>
-          </Link>
           <Link to="/about">
             <Button name="About"></Button>
           </Link>
