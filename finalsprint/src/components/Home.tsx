@@ -2,6 +2,8 @@ import circuitTree from "../assets/PortfolioPics/tree-shape-of-straight-lines-li
 import githubImg from "../assets/PortfolioPics/github-mark-white.svg";
 import linkedinImg from "../assets/PortfolioPics/In-Blue-14@2x.png";
 import ProgrammingLangCard from "../components/ProgrammingLangCard";
+import ProjectCard from "../components/ProjectCard";
+import ProjectCardButtons from "../components/ProjectCardButtons";
 
 function Home() {
   return (
@@ -42,6 +44,19 @@ function Home() {
             <ProgrammingLangCard name="JavaScript" />
             <ProgrammingLangCard name="TypeScript" />
             <ProgrammingLangCard name="React" />
+          </div>
+          <h2>Projects & Prior Work</h2>
+          <div className="projectsgrid">
+            <ProjectCard
+              title="Data Farms - Weather Data Analysis"
+              description="Used the Plotly React Module to display data in a website in the form of graphs."
+            />
+            <ProjectCardButtons
+              title="Hangman Game"
+              description="A game of Hangman made in React."
+              tryLink="/hangman"
+              codeLink="/hangman-code"
+            />
           </div>
         </div>
       </article>

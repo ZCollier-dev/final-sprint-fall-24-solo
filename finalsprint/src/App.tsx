@@ -5,6 +5,7 @@ import Hangman from "./components/Hangman";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import HangmanCode from "./components/HangmanCode";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/hangman" element={<Hangman />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/hangman-code" element={<HangmanCode />} />
           </Route>
         </Routes>
       </BrowserRouter>

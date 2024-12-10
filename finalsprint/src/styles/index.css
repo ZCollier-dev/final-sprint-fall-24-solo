@@ -9,14 +9,16 @@
 }
 
 main {
-  margin-top: 10%;
-  margin-left: 15%;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 15%;
   color: white;
   text-shadow: 4px 4px 4px black;
 }
 
 h2 {
   font-size: 3rem;
+  margin-top: 1rem;
 }
 
 .toparticle {
@@ -53,5 +55,14 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.projectsgrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
   margin-top: 1rem;
 }
