@@ -31,7 +31,7 @@ function Home() {
               href="https://www.linkedin.com/in/zachary-collier-010a42332/"
               target="_blank"
             >
-              <img className="linkedin" src={linkedinImg} alt="" />
+              <img src={linkedinImg} alt="LinkedIn Logo" />
             </a>
           </div>
         </div>
