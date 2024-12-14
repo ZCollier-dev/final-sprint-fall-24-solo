@@ -33,6 +33,13 @@ h3 {
   text-indent: 4rem;
   list-style-position: inside;
 }
+.ruleslist {
+  text-indent: 2rem;
+  list-style-position: inside;
+}
+.ruleslist ul {
+  text-indent: 4rem;
+}
 
 .toparticle {
   max-width: 750px;

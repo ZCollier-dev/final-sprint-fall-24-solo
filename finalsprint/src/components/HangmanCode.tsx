@@ -5,6 +5,8 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 function HangmanCode() {
+  const hangmanCode = "";
+
   return (
     <main>
       <img className="treeimg" src={circuitTree} />
@@ -14,7 +16,7 @@ function HangmanCode() {
           <Button name="Back To Hangman"></Button>
         </Link>
         <div className="codebox">
-          <code>Code Here</code>
+          <code>{hangmanCode}</code>
         </div>
       </article>
     </main>
