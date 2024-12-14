@@ -3,7 +3,7 @@ import githubImg from "../assets/PortfolioPics/github-mark-white.svg";
 import linkedinImg from "../assets/PortfolioPics/In-Blue-14@2x.png";
 import emailImg from "../assets/PortfolioPics/Group 10.png";
 import { send } from "emailjs-com";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../styles/Contact.css";
 
 function Contact() {
@@ -12,6 +12,30 @@ function Contact() {
     senderemail: "",
     sendermessage: "",
   });
+
+  const [alertInfo, setAlertInfo] = useState({
+    type: "empty",
+    alertMessage: "",
+  });
+
+  const alertElement = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    alertElement.current!.innerHTML = `<p>${alertInfo.alertMessage}</p>`;
+    if (alertInfo.type === "empty") {
+      alertElement.current!.style.background = "rgba(0,0,0,0)";
+    } else if (alertInfo.type === "success") {
+      alertElement.current!.style.background = "green";
+    } else {
+      alertElement.current!.style.background = "red";
+    }
+
+    if (alertInfo.type != "empty") {
+      setTimeout(() => {
+        setAlertInfo({ type: "empty", alertMessage: "" });
+      }, 5000);
+    }
+  }, [alertInfo]);
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
@@ -26,9 +50,14 @@ function Contact() {
     send("service_y1amfoj", "template_l5wc3yb", toSend, "TyhAq8dr8vfw_DyMj")
       .then((response) => {
         console.log("SUCCESS", response.status, response.text);
+        setAlertInfo({ type: "success", alertMessage: `Message Sent.` });
       })
       .catch((err) => {
         console.log("FAILED", err);
+        setAlertInfo({
+          type: "fail",
+          alertMessage: `An error occured. Please try again later.`,
+        });
       });
   };
 
@@ -72,6 +101,7 @@ function Contact() {
                   name="sendername"
                   value={toSend.sendername}
                   onChange={handleChangeInput}
+                  required
                 />
               </div>
               <div className="quickemailsenderemail">
@@ -82,6 +112,7 @@ function Contact() {
                   name="senderemail"
                   value={toSend.senderemail}
                   onChange={handleChangeInput}
+                  required
                 />
               </div>
               <div className="quickemailmessage">
@@ -91,10 +122,14 @@ function Contact() {
                   id="sendermessage"
                   value={toSend.sendermessage}
                   onChange={handleChangeTextarea}
+                  required
                 ></textarea>
               </div>
               <div>
                 <button type="submit">Submit</button>
+              </div>
+              <div className="sendalert" ref={alertElement}>
+                <p></p>
               </div>
             </form>
           </div>
