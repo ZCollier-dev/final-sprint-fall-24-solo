@@ -2,8 +2,36 @@ import circuitTree from "../assets/PortfolioPics/tree-shape-of-straight-lines-li
 import githubImg from "../assets/PortfolioPics/github-mark-white.svg";
 import linkedinImg from "../assets/PortfolioPics/In-Blue-14@2x.png";
 import emailImg from "../assets/PortfolioPics/Group 10.png";
+import { send } from "emailjs-com";
+import { useState } from "react";
+import "../styles/Contact.css";
 
 function Contact() {
+  const [toSend, setToSend] = useState({
+    sendername: "",
+    senderemail: "",
+    sendermessage: "",
+  });
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    send("service_y1amfoj", "template_l5wc3yb", toSend, "TyhAq8dr8vfw_DyMj")
+      .then((response) => {
+        console.log("SUCCESS", response.status, response.text);
+      })
+      .catch((err) => {
+        console.log("FAILED", err);
+      });
+  };
+
   return (
     <main>
       <img className="treeimg" src={circuitTree} />
@@ -35,18 +63,38 @@ function Contact() {
             <h3>Quick Email</h3>
             <br />
             <br />
-            <form action="">
+            <form onSubmit={onSubmit}>
               <div className="quickemailsendername">
                 <label htmlFor="sendername">Your Name</label>
-                <input type="text" id="sendername" name="sendername" />
+                <input
+                  type="text"
+                  id="sendername"
+                  name="sendername"
+                  value={toSend.sendername}
+                  onChange={handleChangeInput}
+                />
               </div>
               <div className="quickemailsenderemail">
                 <label htmlFor="senderemail">Your Email</label>
-                <input type="email" id="senderemail" name="senderemail" />
+                <input
+                  type="email"
+                  id="senderemail"
+                  name="senderemail"
+                  value={toSend.senderemail}
+                  onChange={handleChangeInput}
+                />
               </div>
               <div className="quickemailmessage">
                 <label htmlFor="sendermessage">Your Message</label>
-                <textarea name="sendermessage" id="sendermessage"></textarea>
+                <textarea
+                  name="sendermessage"
+                  id="sendermessage"
+                  value={toSend.sendermessage}
+                  onChange={handleChangeTextarea}
+                ></textarea>
+              </div>
+              <div>
+                <button type="submit">Submit</button>
               </div>
             </form>
           </div>

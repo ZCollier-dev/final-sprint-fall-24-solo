@@ -1,0 +1,25 @@
+input,
+textarea {
+  width: 100%;
+  background-color: #666666;
+  border: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  color: white;
+}
+
+input {
+  font-size: 1.25rem;
+}
+
+label {
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+.quickemailsendername,
+.quickemailsenderemail,
+.quickemailmessage {
+  margin-bottom: 2rem;
+}

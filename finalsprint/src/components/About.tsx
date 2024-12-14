@@ -42,13 +42,15 @@ function About() {
             creative risks and stand out from the crowd. A few of my favorites,
             from studios large and small, include: <br />
             <br />
-            <ul className="gameslist">
-              <li>Paper Mario: The Thousand Year Door (Nintendo)</li>
-              <li>Monster Hunter: World (Capcom)</li>
-              <li>Terraria (Re-Logic)</li>
-              <li>A Hat in Time (Gears for Breakfast)</li>
-              <li>CrossCode (Radical Fish Games)</li>
-            </ul>
+          </p>
+          <ul className="gameslist">
+            <li>Paper Mario: The Thousand Year Door (Nintendo)</li>
+            <li>Monster Hunter: World (Capcom)</li>
+            <li>Terraria (Re-Logic)</li>
+            <li>A Hat in Time (Gears for Breakfast)</li>
+            <li>CrossCode (Radical Fish Games)</li>
+          </ul>
+          <p>
             <br />
             In the future, I hope to begin a hobby in blacksmithing. Working
             with metal in the ways blacksmiths do has always stuck out to me as
