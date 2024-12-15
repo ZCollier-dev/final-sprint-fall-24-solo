@@ -9,3 +9,7 @@ button {
   box-shadow: 4px 4px 4px black;
   cursor: pointer;
 }
+
+button:hover {
+  background-image: linear-gradient(to bottom right, #84562b, #d4ad64);
+}
